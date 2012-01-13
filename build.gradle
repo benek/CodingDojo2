@@ -8,4 +8,5 @@ repositories {
 
 dependencies {
     groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.4'
+    testCompile group: 'org.spockframework', name:'spock-core', version: '0.5-groovy-1.8'
 }
