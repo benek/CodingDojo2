@@ -7,13 +7,16 @@ package codingdojo.romanos
  * www.javamexico.org
  */
 
-class Romanos{
-  int romanoArabigo(String romano){
-    def romanos = [I:1,V:5,X:10,L:50,C:100,D:500,M:1000];
-      int arabigo = 0, siguiente;
-      for (int x = 0; x < romano.length();x++){
-        arabigo += ((romanos.get(romano[x])) < ((x >= (romano.length()-1)) ?0: romanos.get(romano[x+1])))? -(romanos.get(romano[x])): (romanos.get(romano[x]));
-      };
-      return arabigo;
-  }
+class Romanos {
+
+    def romanos = [I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000];
+
+    int romanoArabigo(String romano) {
+        int arabigo = 0;
+        for (int i = 0; i < romano.length(); i++) {
+            arabigo += ((romanos.get(romano[i])) < ((i >= (romano.length() - 1)) ? 0 : romanos.get(romano[i + 1]))) ? -(romanos.get(romano[i])) : (romanos.get(romano[i]));
+        };
+        return arabigo;
+    }
+
 }

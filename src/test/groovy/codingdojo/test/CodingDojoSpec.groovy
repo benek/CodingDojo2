@@ -11,6 +11,15 @@ import codingdojo.numerosprimos.NumerosPrimos
  */
 class CodingDojoSpec extends Specification{
 
+    def "Prueba de obtencion de un numero primo"(){
+        given:
+            NumerosPrimos numerosPrimos = new NumerosPrimos();
+        when:
+            int resultado = numerosPrimos.numeroPrimo(10001);
+        then:
+            resultado == 104743;
+    }
+
     def "Prueba de conversion de numero romano a arabigo"(){
         given:
             Romanos romanos = new Romanos();
@@ -19,17 +28,14 @@ class CodingDojoSpec extends Specification{
         then:
             conversion == resultadoArabigo;
         where:
-            romanoEntrada << ["MMXX", "MCCXXXIV", "CMXCIX", "MMMDCCCXCIX", "XVIII", "MCMXCIX"];
-            resultadoArabigo << [2020, 1234, 999, 3899, 18, 1999];
-    }
-
-    def "Prueba de obtencion de un numero primo"(){
-        given:
-            NumerosPrimos numerosPrimos = new NumerosPrimos();
-        when:
-            def resultado = numerosPrimos.numeroPrimo(10001);
-        then:
-            resultado == 104743;
+            romanoEntrada    |    resultadoArabigo
+            "MMXX"           |           2020
+            "MCCXXXIV"       |           1234
+            "CMXCIX"         |            999
+            "MMMDCCCXCIX"    |           3899
+            "XVIII"          |             18
+            "MCMXCIX"        |           1999
+            "XV"             |             15
     }
 
 }
