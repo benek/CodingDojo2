@@ -9,8 +9,8 @@ package codingdojo.numerosprimos;
 public class NumerosPrimos {
 
     public int numeroPrimo(int numeroPrimo){
-        int i = 2;
-        int primo = 0;
+        int i = 3;
+        int primo = 1;
         for (;;){
             if (esPrimo(i)){
                 primo++;
@@ -18,7 +18,7 @@ public class NumerosPrimos {
             if (primo == numeroPrimo){
                 break;
             }
-            i++;
+            i+=2;
         }
         return i;
     }
@@ -27,7 +27,7 @@ public class NumerosPrimos {
         if (numero == 2 || numero == 3){
             return true;
         } else {
-            for (int i = 2; i <= (int) Math.sqrt(numero); i++){
+            for (int i = 3; i <= (int) Math.sqrt(numero); i+=2){
                 if (numero%i == 0){
                     return false;
                 }
